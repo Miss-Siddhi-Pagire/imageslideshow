@@ -74,6 +74,32 @@
         <img src="./images/back.png" class="img-back img-same" onclick="back()"/>
         <img src="./images/next.png" class="img-next img-same" ondblclick="next()"/>
     </div>
+    <script> 
+        const slide = document.getElementById('cover-img');
+        const img = ["images/cover-img-1.jpg","images/cover-img-2.jpg","images/cover-img-3.jpg","images/cover-img-4.jpg","images/cover-img-5.jpg"];
+        let index = 0;
+
+        function next() {
+            if (index < img.length - 1) {
+                index++;
+            } else {
+                index = 0;
+            }
+            slide.src = img[index];
+        }
+
+        function back() {
+            if (index > 0) {
+                index--;
+            } else {
+                index = img.length - 1;
+            }
+            slide.src = img[index];
+        }
+
+        setInterval(next, 2000);
+    </script>
+
     
 </body>
 </html>
